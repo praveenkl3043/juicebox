@@ -51,6 +51,7 @@
         <aside class="cart" id="cart">
 
     <div class="cart-header">
+        <button class="back-cart" onclick="closeCart()">‹</button>
         <div>
             <h2>Cart</h2>
             <span id="cartItemCount">0 Items</span>
@@ -76,7 +77,7 @@
 
 
 <!-- Mobile Cart Bar -->
-<div class="cart-mobile-bar" id="mobileCartBar">
+<div class="cart-mobile-bar" id="mobileCartBar" onclick="openCart()">
 
     <span class="cart-mobile-count" id="mobileCartCount">
         0 Items added

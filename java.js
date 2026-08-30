@@ -39,12 +39,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/papayap.jpeg" alt="papayap">
                 <h3 class="product-name">
     <span class="product-title">PAPAYA</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹60</p>
-                <button onclick="addToCart('Apple Juice', 60)">
+                <button onclick="addToCart('papayap', 60)">
     Add to Cart
 </button>
             </div>
@@ -57,12 +57,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/watermelonp.jpeg" alt="watermelonp">
                 <h3 class="product-name">
     <span class="product-title">WATER MELON</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹60</p>
-                <button onclick="addToCart('Apple Juice', 60)">
+                <button onclick="addToCart('watermelonp', 60)">
     Add to Cart
 </button>
             </div>
@@ -75,12 +75,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/amlap.jpeg" alt="amlap">
                 <h3 class="product-name">
     <span class="product-title">AMLA</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹90</p>
-                <button onclick="addToCart('Apple Juice', 90)">
+                <button onclick="addToCart('amlap', 90)">
     Add to Cart
 </button>
             </div>
@@ -93,12 +93,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/beetrootp.jpeg" alt="beetrootp">
                 <h3 class="product-name">
     <span class="product-title">BEETROOT</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹80</p>
-                <button onclick="addToCart('Apple Juice', 80)">
+                <button onclick="addToCart('beetrootp', 80)">
     Add to Cart
 </button>
             </div>
@@ -111,12 +111,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/pineapplep.jpeg" alt="pineapplep">
                 <h3 class="product-name">
     <span class="product-title">PINEAPPLE</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹80</p>
-                <button onclick="addToCart('Apple Juice', 80)">
+                <button onclick="addToCart('pineapplep', 80)">
     Add to Cart
 </button>
             </div>
@@ -129,12 +129,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/muskmelonp.jpeg" alt="muskmelonp">
                 <h3 class="product-name">
     <span class="product-title">MUSK MELON</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹80</p>
-                <button onclick="addToCart('Apple Juice', 80)">
+                <button onclick="addToCart('muskmelonp', 80)">
     Add to Cart
 </button>
             </div>
@@ -147,12 +147,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/chikoop.jpeg" alt="chikoop">
                 <h3 class="product-name">
     <span class="product-title">CHIKOO</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹80</p>
-                <button onclick="addToCart('Apple Juice', 80)">
+                <button onclick="addToCart('chikoop', 80)">
     Add to Cart
 </button>
             </div>
@@ -165,12 +165,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/bananap.jpeg" alt="bananap">
                 <h3 class="product-name">
     <span class="product-title">BANANA</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹80</p>
-                <button onclick="addToCart('Apple Juice', 80)">
+                <button onclick="addToCart('bananap', 80)">
     Add to Cart
 </button>
             </div>
@@ -183,12 +183,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/carrotp.jpeg" alt="carrotp">
                 <h3 class="product-name">
     <span class="product-title">CARROT</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹80</p>
-                <button onclick="addToCart('Apple Juice', 80)">
+                <button onclick="addToCart('carrotp', 80)">
     Add to Cart
 </button>
             </div>
@@ -201,12 +201,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/grapep.jpeg" alt="grapep">
                 <h3 class="product-name">
     <span class="product-title">GRAPE</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹90</p>
-                <button onclick="addToCart('Apple Juice', 90)">
+                <button onclick="addToCart('grapep', 90)">
     Add to Cart
 </button>
             </div>
@@ -219,12 +219,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/applep.jpeg" alt="applep">
                 <h3 class="product-name">
     <span class="product-title">APPLE</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹90</p>
-                <button onclick="addToCart('Apple Juice', 90)">
+                <button onclick="addToCart('applep', 90)">
     Add to Cart
 </button>
             </div>
@@ -237,12 +237,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/pomograntep.jpeg" alt="pomograntep">
                 <h3 class="product-name">
     <span class="product-title">POMEGRANATE</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹120</p>
-                <button onclick="addToCart('Apple Juice', 120)">
+                <button onclick="addToCart('pomograntep', 120)">
     Add to Cart
 </button>
             </div>
@@ -255,12 +255,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/orangep.jpeg" alt="orangep">
                 <h3 class="product-name">
     <span class="product-title">ORANGE</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹120</p>
-                <button onclick="addToCart('Apple Juice', 120)">
+                <button onclick="addToCart('orangep', 120)">
     Add to Cart
 </button>
             </div>
@@ -273,12 +273,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/mosambip.jpeg" alt="mosambip">
             <h3 class="product-name">
     <span class="product-title">MOSAMBI</span>
     <span class="product-type">(P)</span></h3>    
             <p>₹90</p>
-                <button onclick="addToCart('Apple Juice', 90)">
+                <button onclick="addToCart('mosambip', 90)">
     Add to Cart
 </button>
             </div>
@@ -291,12 +291,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/mangop.jpeg" alt="mangop">
                 <h3 class="product-name">
     <span class="product-title">MANGO</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹90</p>
-                <button onclick="addToCart('Apple Juice', 90)">
+                <button onclick="addToCart('mangop', 90)">
     Add to Cart
 </button>
             </div>
@@ -309,12 +309,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/figp.jpeg" alt="figp">
                 <h3 class="product-name">
     <span class="product-title">FIG</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹90</p>
-                <button onclick="addToCart('Apple Juice', 90)">
+                <button onclick="addToCart('figp', 90)">
     Add to Cart
 </button>
             </div>
@@ -327,12 +327,12 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="MixedFruit Juice(P)">
+            <img src="images/juiceparcel/mixedfruitp.jpeg" alt="mixedfruitp">
                 <h3 class="product-name">
     <span class="product-title">MIXED FRUIT</span>
     <span class="product-type">(P)</span></h3>
                 <p>₹100</p>
-                <button onclick="addToCart('MixedFruit Juice(P)', 100)">
+                <button onclick="addToCart('mixedfruitp', 100)">
     Add to Cart
 </button>
             </div>
@@ -348,14 +348,14 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="ABC Juice(P)">
+            <img src="images/juiceparcel/abcp.jpeg" alt="abcp">
                 <h3 class="product-name">
     <span class="product-title">ABC</span>
     <span class="product-description">(APPLE,BEETROOT,CARROT)</span>
     <span class="product-type">(P)</span>
                </h3>
                 <p>₹120</p>
-                <button onclick="addToCart('ABC Juice(P)', 120)">
+                <button onclick="addToCart('abcp', 120)">
     Add to Cart
 </button>
             </div>
@@ -371,14 +371,14 @@ juiceButton.addEventListener("click", function() {
 </button>
             </div>
             <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
+            <img src="images/juiceparcel/carrangep.jpeg" alt="carrangep">
                 <h3 class="product-name">
     <span class="product-title">CARRANGE</span>
     <span class="product-description">(CARROT,ORANGE)</span>
     <span class="product-type">(P)</span>
                </h3>
                 <p>₹130</p>
-                <button onclick="addToCart('CARRANGE(P)', 130)">
+                <button onclick="addToCart('carrangep', 130)">
     Add to Cart
 </button>
             </div>
@@ -420,15 +420,33 @@ function addToCart(name, price) {
 function displayCart() {
 
     cartItems.innerHTML = "";
+
     let total = 0;
+    let totalItems = 0;
+    if (cart.length === 0) {
+
+        cartItems.innerHTML = `
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <h3>Your cart is empty</h3>
+                <p>Add some fresh juices to your cart.</p>
+            </div>
+        `;
+
+    }
+
     cart.forEach(function(item) {
+
         total += item.price * item.quantity;
+        totalItems += item.quantity;
+
         cartItems.innerHTML += `
             <div class="cart-item">
 
+                <div class="cart-item-top">
                 <h3>${item.name}</h3>
-
                 <p>₹${item.price}</p>
+                </div>
 
                 <button onclick="decreaseQuantity('${item.name}')">
                     -
@@ -442,9 +460,18 @@ function displayCart() {
 
             </div>
         `;
-
     });
+
     cartTotal.innerHTML = total;
+
+    // Update cart header count
+    const cartItemCount = document.getElementById("cartItemCount");
+
+    if (totalItems === 1) {
+        cartItemCount.textContent = "1 Item";
+    } else {
+        cartItemCount.textContent = totalItems + " Items";
+    }
 }
 function updateMobileCart() {
 
@@ -541,5 +568,27 @@ function showPaymentOptions() {
         window.location.href = upiUrl;
 
     });
+
+}
+function clearCart() {
+
+    cart = [];
+
+    displayCart();
+    updateMobileCart();
+
+}
+function openCart() {
+
+    const cartElement = document.getElementById("cart");
+
+    cartElement.classList.add("cart-open");
+
+}
+function closeCart() {
+
+    const cartElement = document.getElementById("cart");
+
+    cartElement.classList.remove("cart-open");
 
 }
