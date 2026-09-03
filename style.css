@@ -3,28 +3,37 @@
 ========================= */
 
 .tophead {
+    width: 100%;
+    height: 85px;
+    padding: 0 15px;
+    margin: 0;
+    background: linear-gradient(to right, #8b0000, #ff0000);
     display: flex;
     align-items: center;
-    gap: 10px;
-
-    background-color: darkslategrey;
-    color: white;
-
-    padding: 10px;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-.tophead h2 {
-    margin: 0;
+.tophead .logo {
+    width: 180px;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    display: block;
 }
+@media (max-width: 768px) {
 
-.menu-button {
-    font-size: 25px;
-    background: none;
-    color: white;
-    border: none;
-    cursor: pointer;
+    .tophead {
+        height: 85px;
+        padding: 0 12px;
+    }
+
+    .tophead .logo {
+        width: 180px;
+        max-height: 70px;
+    }
 }
-
 
 /* =========================
    MOVING WELCOME TEXT
@@ -922,4 +931,85 @@
         color: #777;
     }
 
+}
+@media (max-width: 768px) {
+
+    .generate-bill-button {
+        width: 100%;
+        padding: 13px;
+
+        border-radius: 12px;
+
+        font-size: 16px;
+    }
+
+}
+/* Bill */
+
+.bill {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.bill h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 26px;
+}
+
+.bill > p {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.bill hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+.bill table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.bill th,
+.bill td {
+    padding: 8px 4px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.bill th {
+    font-size: 13px;
+}
+
+.bill td {
+    font-size: 13px;
+}
+
+.bill h3 {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.bill button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #20b276;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
