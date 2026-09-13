@@ -1,4 +1,12 @@
 let cart = [];
+fetch("http://127.0.0.1:5000/api/products")
+    .then(response => response.json())
+    .then(products => {
+        console.log("Products from Python:", products);
+    })
+    .catch(error => {
+        console.error("Backend connection failed:", error);
+    });
 const fruitshakesButton = document.getElementById("fruitshakesButton");
 const juiceButton = document.getElementById("juiceButton");
 const lemonspecialButton = document.getElementById("lemonspecialButton");
@@ -11,385 +19,46 @@ const cartTotal = document.getElementById("cartTotal");
 const checkoutButton = document.getElementById("checkoutButton");
 
 
-juiceButton.addEventListener("click", function() {
-    mainContent.innerHTML = `
-        <h2>Juice</h2>
+juiceButton.addEventListener("click", function () {
 
-        <div class="product-container">
+    fetch("http://127.0.0.1:5000/api/products")
+        .then(response => response.json())
+        .then(products => {
 
-            <div class="product-card">
-            <img src="images/Juice/FreshLemon Juice.jpeg" alt="FreshLemon Juice">
-                <h3>FRESH LEMON</h3>
-                <p>₹40</p>
-                <button onclick="addToCart('FreshLemon Juice', 40)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/freshlemonparcel.jpeg" alt="freshlemonparcel">
-                <h3 class="product-name">
-    <span class="product-title">FRESH LEMON</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹50</p>
-                <button onclick="addToCart('freshlemonparcel', 50)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Papaya Juice.jpeg" alt="Papaya Juice">
-                <h3>PAPAYA</h3>
-                <p>₹50</p>
-                <button onclick="addToCart('Papaya Juice', 50)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/papayap.jpeg" alt="papayap">
-                <h3 class="product-name">
-    <span class="product-title">PAPAYA</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹60</p>
-                <button onclick="addToCart('papayap', 60)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Watermelon Juice.jpeg" alt="Watermelon Juice">
-                <h3>WATER MELON</h3>
-                <p>₹50</p>
-                <button onclick="addToCart('Watermelon Juice', 50)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/watermelonp.jpeg" alt="watermelonp">
-                <h3 class="product-name">
-    <span class="product-title">WATER MELON</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹60</p>
-                <button onclick="addToCart('watermelonp', 60)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Amla Juice.jpeg" alt="Amla Juice">
-                <h3>AMLA</h3>
-                <p>₹60</p>
-                <button onclick="addToCart('Amla Juice', 60)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/amlap.jpeg" alt="amlap">
-                <h3 class="product-name">
-    <span class="product-title">AMLA</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹90</p>
-                <button onclick="addToCart('amlap', 90)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Betroot Juice.jpeg" alt="Betroot Juice">
-                <h3>BEETROOT</h3>
-                <p>₹70</p>
-                <button onclick="addToCart('Betroot Juice', 70)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/beetrootp.jpeg" alt="beetrootp">
-                <h3 class="product-name">
-    <span class="product-title">BEETROOT</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹80</p>
-                <button onclick="addToCart('beetrootp', 80)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/PineApple Juice.jpeg" alt="PineApple Juice">
-                <h3>PINEAPPLE</h3>
-                <p>₹70</p>
-                <button onclick="addToCart('PineApple Juice', 70)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/pineapplep.jpeg" alt="pineapplep">
-                <h3 class="product-name">
-    <span class="product-title">PINEAPPLE</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹80</p>
-                <button onclick="addToCart('pineapplep', 80)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/MuskMelon Juice.jpeg" alt="MuskMelon Juice">
-                <h3>MUSK MELON</h3>
-                <p>₹70</p>
-                <button onclick="addToCart('MuskMelon Juice', 70)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/muskmelonp.jpeg" alt="muskmelonp">
-                <h3 class="product-name">
-    <span class="product-title">MUSK MELON</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹80</p>
-                <button onclick="addToCart('muskmelonp', 80)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Chikoo Juice.jpeg" alt="Chikoo Juice">
-                <h3>CHIKOO</h3>
-                <p>₹70</p>
-                <button onclick="addToCart('Chikoo Juice', 70)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/chikoop.jpeg" alt="chikoop">
-                <h3 class="product-name">
-    <span class="product-title">CHIKOO</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹80</p>
-                <button onclick="addToCart('chikoop', 80)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Banana Juice.jpeg" alt="Banana Juice">
-                <h3>BANANA</h3>
-                <p>₹70</p>
-                <button onclick="addToCart('Banana Juice', 70)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/bananap.jpeg" alt="bananap">
-                <h3 class="product-name">
-    <span class="product-title">BANANA</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹80</p>
-                <button onclick="addToCart('bananap', 80)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Carrot Juice.jpeg" alt="Carrot Juice">
-                <h3>CARROT</h3>
-                <p>₹70</p>
-                <button onclick="addToCart('Carrot Juice', 70)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/carrotp.jpeg" alt="carrotp">
-                <h3 class="product-name">
-    <span class="product-title">CARROT</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹80</p>
-                <button onclick="addToCart('carrotp', 80)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Grape Juice.jpeg" alt="Grape Juice">
-                <h3>GRAPE</h3>
-                <p>₹80</p>
-                <button onclick="addToCart('Grape Juice', 80)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/grapep.jpeg" alt="grapep">
-                <h3 class="product-name">
-    <span class="product-title">GRAPE</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹90</p>
-                <button onclick="addToCart('grapep', 90)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Applejuice.jpeg" alt="Apple Juice">
-                <h3>Apple Juice</h3>
-                <p>₹80</p>
-                <button onclick="addToCart('Apple Juice', 80)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/applep.jpeg" alt="applep">
-                <h3 class="product-name">
-    <span class="product-title">APPLE</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹90</p>
-                <button onclick="addToCart('applep', 90)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Pomogrante Juice.jpeg" alt="Pomogrante Juice">
-                <h3>POMEGRANATE</h3>
-                <p>₹110</p>
-                <button onclick="addToCart('Pomogrante Juice', 110)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/pomograntep.jpeg" alt="pomograntep">
-                <h3 class="product-name">
-    <span class="product-title">POMEGRANATE</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹120</p>
-                <button onclick="addToCart('pomograntep', 120)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Orange Juice.jpeg" alt="Orange Juice">
-                <h3>ORANGE</h3>
-                <p>₹110</p>
-                <button onclick="addToCart('Orange Juice', 110)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/orangep.jpeg" alt="orangep">
-                <h3 class="product-name">
-    <span class="product-title">ORANGE</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹120</p>
-                <button onclick="addToCart('orangep', 120)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Mosambi Juice.jpeg" alt="Mosambi Juice">
-                <h3>MOSAMBI</h3>
-                <p>₹80</p>
-                <button onclick="addToCart('Mosambi Juice', 80)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/mosambip.jpeg" alt="mosambip">
-            <h3 class="product-name">
-    <span class="product-title">MOSAMBI</span>
-    <span class="product-type">(P)</span></h3>    
-            <p>₹90</p>
-                <button onclick="addToCart('mosambip', 90)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Mango Juice.jpeg" alt="Mango Juice">
-                <h3>MANGO</h3>
-                <p>₹80</p>
-                <button onclick="addToCart('Mango Juice', 80)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/mangop.jpeg" alt="mangop">
-                <h3 class="product-name">
-    <span class="product-title">MANGO</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹90</p>
-                <button onclick="addToCart('mangop', 90)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/Fig Juice.jpeg" alt="Fig Juice">
-                <h3>FIG</h3>
-                <p>₹80</p>
-                <button onclick="addToCart('Fig Juice', 80)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/figp.jpeg" alt="figp">
-                <h3 class="product-name">
-    <span class="product-title">FIG</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹90</p>
-                <button onclick="addToCart('figp', 90)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/MixedFruit Juice.jpeg" alt="MixedFruit Juice">
-                <h3>MIXED FRUIT</h3>
-                <p>₹90</p>
-                <button onclick="addToCart('MixedFruit Juice', 90)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/mixedfruitp.jpeg" alt="mixedfruitp">
-                <h3 class="product-name">
-    <span class="product-title">MIXED FRUIT</span>
-    <span class="product-type">(P)</span></h3>
-                <p>₹100</p>
-                <button onclick="addToCart('mixedfruitp', 100)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/ABC Juice.jpeg" alt="ABC Juice">
-                <h3 class="product-name">
-    <span class="product-title">ABC</span>
-    <span class="product-description">(APPLE,BEETROOT,CARROT)</span>
-               </h3>
-                <p>₹110</p>
-                <button onclick="addToCart('ABC Juice', 110)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/abcp.jpeg" alt="abcp">
-                <h3 class="product-name">
-    <span class="product-title">ABC</span>
-    <span class="product-description">(APPLE,BEETROOT,CARROT)</span>
-    <span class="product-type">(P)</span>
-               </h3>
-                <p>₹120</p>
-                <button onclick="addToCart('abcp', 120)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/Juice/CARRAJGE Juice.jpeg" alt="Apple Juice">
-                <h3 class="product-name">
-    <span class="product-title">CARRANGE</span>
-    <span class="product-description">(CARROT,ORANGE)</span>
-               </h3>
-                <p>₹120</p>
-                <button onclick="addToCart('CARRANGE', 120)">
-    Add to Cart
-</button>
-            </div>
-            <div class="product-card">
-            <img src="images/juiceparcel/carrangep.jpeg" alt="carrangep">
-                <h3 class="product-name">
-    <span class="product-title">CARRANGE</span>
-    <span class="product-description">(CARROT,ORANGE)</span>
-    <span class="product-type">(P)</span>
-               </h3>
-                <p>₹130</p>
-                <button onclick="addToCart('carrangep', 130)">
-    Add to Cart
-</button>
-            </div>
+            mainContent.innerHTML = `
+                <h2>Juice</h2>
 
-        </div>
-    `;
+                <div class="product-container">
+
+                    ${products.map(function (product) {
+
+                        return `
+                            <div class="product-card">
+
+                                <img src="${product.image}"
+                                     alt="${product.name}">
+
+                                <h3>${product.display_name}</h3>
+
+                                <p>₹${product.price}</p>
+
+                                <button onclick="addToCart('${product.name}', ${product.price})">
+                                    Add to Cart
+                                </button>
+
+                            </div>
+                        `;
+
+                    }).join("")}
+
+                </div>
+            `;
+
+        })
+        .catch(error => {
+            console.error("Error loading products:", error);
+        });
+
 });
 fruitshakesButton.addEventListener("click", function() {
     mainContent.innerHTML = `
@@ -1097,7 +766,7 @@ function displayCart() {
 
                 <div class="cart-item-top">
                 <h3>${item.name}</h3>
-                <p>₹${item.price}</p>
+                <p>₹${item.price * item.quantity}</p>
                 </div>
 
                 <button onclick="decreaseQuantity('${item.name}')">

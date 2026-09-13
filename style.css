@@ -97,6 +97,9 @@ body {
 .side-menu {
     width: 200px !important;
     min-height: 500px !important;
+    height: auto;
+    min-height: 100%;
+    align-self: stretch;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -192,106 +195,7 @@ body {
     background: #FFD600 !important;
     color: #000000 !important;
 }
-@media (max-width: 768px) {
 
-    /* =========================
-       SIDE MENU
-    ========================= */
-
-    .side-menu {
-        flex: 0 0 105px;
-
-        width: 105px;
-        min-width: 105px;
-        max-width: 105px;
-
-        /* Fill remaining screen height */
-        height: calc(100vh - 75px);
-min-height: calc(100vh - 75px);
-
-        margin: 0;
-        margin-top: 0;
-        padding: 0;
-
-        background: #111111;
-
-        border: none !important;
-        outline: none !important;
-        box-shadow: none !important;
-
-        box-sizing: border-box;
-
-        overflow: hidden;
-    }
-
-
-    /* =========================
-       MENU TITLE
-    ========================= */
-
-    .side-menu h3 {
-        height: 45px;
-        margin-top: 0;
-        margin: 0;
-        padding: 0 5px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        font-size: 11px;
-        font-weight: bold;
-
-        color: #FFD600;
-        background: #181818;
-
-        box-sizing: border-box;
-    }
-
-
-    /* =========================
-       MENU LINKS
-    ========================= */
-
-    .side-menu a {
-        display: block;
-
-        width: 100%;
-
-        padding: 7px 6px !important;
-        margin: 0;
-
-        box-sizing: border-box;
-
-        color: #E5E5E5;
-        background: #111111;
-
-        font-size: 9px;
-        font-weight: 600;
-
-        line-height: 1.25;
-
-        text-decoration: none;
-
-        /* Allow long names to wrap */
-        white-space: normal;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-
-        border: none;
-        border-bottom: 1px solid #292929;
-    }
-
-
-    /* =========================
-       HOVER
-    ========================= */
-
-    .side-menu a:hover {
-        background: #FFD600;
-        color: #000000;
-    }
-}
 /* =========================
    MENU TAGLINE
 ========================= */
@@ -341,25 +245,26 @@ min-height: calc(100vh - 75px);
 @media (max-width: 768px) {
 
     .side-menu {
-        width: 105px !important;
-        min-width: 105px !important;
-        max-width: 105px !important;
-
-        /* FORCE BLACK AREA TO BOTTOM */
-        height: calc(100vh - 75px) !important;
-        min-height: calc(100vh - 75px) !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        background: #111111 !important;
-
+        flex: 0 0 105px;
+    
+        width: 105px;
+        min-width: 105px;
+        max-width: 105px;
+    
+        height: auto;
+        min-height: 100%;
+        align-self: stretch;
+    
+        margin: 0;
+        padding: 0;
+    
+        background: #111111;
+    
         border: none !important;
         outline: none !important;
         box-shadow: none !important;
-
-        box-sizing: border-box !important;
-
+    
+        box-sizing: border-box;
         overflow: hidden;
     }
 
@@ -751,7 +656,7 @@ min-height: calc(100vh - 75px);
 
         border-radius: 10px;
 
-        background-color: #fff8ed;
+        background-color: #F0E8FF;
 
         box-sizing: border-box;
 
