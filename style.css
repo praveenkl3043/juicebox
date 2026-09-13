@@ -576,7 +576,7 @@ min-height: calc(100vh - 75px);
 
     height: 150px;
 
-    object-fit: cover;
+    object-fit: contain;
 
     display: block;
 
@@ -770,7 +770,7 @@ min-height: calc(100vh - 75px);
 
         height: 120px;
 
-        object-fit: cover;
+        object-fit: contain;
 
         display: block;
 
