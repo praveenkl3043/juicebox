@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Juice Box - Shop Owner</title>
+
+    <link rel="stylesheet" href="shop-owner.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div class="logo">
+            🥤 JUICE BOX
+        </div>
+
+        <button class="logout-button" onclick="logout()">
+            Logout
+        </button>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main class="main">
+
+        <section class="welcome">
+
+            <h1>Shop Owner Dashboard</h1>
+
+            <p>Welcome, Shop Owner</p>
+
+        </section>
+
+
+        <!-- Summary -->
+
+        <section class="summary">
+
+            <div class="summary-card">
+
+                <h3>Orders Today</h3>
+
+                <h2 id="ordersToday">0</h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <h3>Sales Today</h3>
+
+                <h2>₹<span id="salesToday">0</span></h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- Shop Status -->
+
+        <section class="status-card" onclick="showShopStatus()">
+
+    <h3>🏪 Shop Status</h3>
+
+    <p id="shopStatus">
+        🟢 Open
+    </p>
+
+    <div id="statusOptions" class="status-options">
+
+        <button onclick="setShopStatus('open', event)">
+            🟢 Open
+        </button>
+
+        <button onclick="setShopStatus('break', event)">
+            ⏸️ Break
+        </button>
+
+        <button onclick="setShopStatus('closed', event)">
+            🔴 Closed
+        </button>
+
+    </div>
+
+</section>
+
+
+        <!-- Menu -->
+
+        <section class="menu">
+
+            <button class="menu-button">
+                🌅 Start Day
+            </button>
+
+            <button class="menu-button">
+                🥤 Products
+            </button>
+
+            <button class="menu-button">
+                🧾 Orders
+            </button>
+
+            <button class="menu-button">
+                💰 Investments
+            </button>
+
+            <button class="menu-button">
+                📊 Sales Analysis
+            </button>
+
+            <button class="menu-button">
+                🌙 End Day
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="shop-owner.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Juice Box - Server Admin</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* HEADER */
+
+        .header {
+            background: #222;
+            color: white;
+
+            padding: 15px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h2 {
+            margin: 0;
+        }
+
+        .logout-button {
+            background: #e53935;
+            color: white;
+
+            border: none;
+            padding: 10px 16px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+        }
+
+
+        /* MAIN */
+
+        .main {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 25px;
+        }
+
+
+        .welcome {
+            margin-bottom: 25px;
+        }
+
+
+        /* SUMMARY */
+
+        .summary {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+
+
+        .card h3 {
+            margin: 0 0 10px;
+
+            color: #555;
+        }
+
+
+        .card h1 {
+            margin: 0;
+        }
+
+
+        /* MENU */
+
+        .menu {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .menu-button {
+            background: white;
+
+            border: none;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+
+
+        .menu-button:hover {
+            background: #eeeeee;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 12px 15px;
+            }
+
+            .header h2 {
+                font-size: 18px;
+            }
+
+            .main {
+                padding: 15px;
+            }
+
+            .summary {
+                grid-template-columns: 1fr;
+            }
+
+            .menu {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* TABLET */
+
+        @media (min-width: 601px) and (max-width: 900px) {
+
+            .summary {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+        .shops-section {
+    background: white;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.shop-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.shop-card h3 {
+    margin-top: 0;
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h2>🖥️ JUICE BOX</h2>
+
+        <button class="logout-button" onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+
+    <!-- MAIN -->
+
+    <div class="main">
+
+
+        <div class="welcome">
+
+            <h2>Server Admin Dashboard</h2>
+
+            <p>
+                System-wide management
+            </p>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="summary">
+
+
+            <div class="card">
+
+                <h3>Shops</h3>
+
+                <h1 id="shopCount">
+                    0
+                </h1>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Orders Today</h3>
+
+                <h1 id="ordersToday">
+                    0
+                </h1>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Sales Today</h3>
+
+                <h1>
+                    ₹<span id="salesToday">0</span>
+                </h1>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <div class="menu">
+
+
+            <button class="menu-button" onclick="loadShops()">
+    🏪 Manage Shops
+</button>
+
+
+            <button class="menu-button" onclick="loadShopOwners()">
+    👤 Manage Shop Owners
+</button>
+
+
+            <button class="menu-button" onclick="loadOrders()">
+    🧾 All Orders
+</button>
+
+
+            <button class="menu-button">
+                📊 All Sales
+            </button>
+
+
+            <button class="menu-button">
+                ⚙️ System Management
+            </button>
+
+
+            <button class="menu-button">
+                📈 Reports
+            </button>
+
+
+                </div>
+
+
+        <div id="shopsSection" class="shops-section" style="display: none;">
+
+    <h2>🏪 Manage Shops</h2>
+
+    <div id="shopsList">
+        Loading shops...
+    </div>
+
+</div>
+
+
+<div id="ownersSection" class="shops-section" style="display: none;">
+
+    <h2>👤 Manage Shop Owners</h2>
+
+    <div id="ownersList">
+        Loading shop owners...
+    </div>
+
+</div>
+<div id="ordersSection" class="shops-section" style="display: none;">
+
+    <h2>🧾 All Orders</h2>
+
+    <div id="ordersList">
+        Loading orders...
+    </div>
+
+</div>
+
+    </div>
+
+
+    <script>
+
+
+        /* LOAD TODAY'S SALES */
+
+        fetch("http://127.0.0.1:5000/api/admin/today")
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                document.getElementById("ordersToday").textContent =
+                    data.orders;
+
+                document.getElementById("salesToday").textContent =
+                    data.sales;
+
+            })
+
+            .catch(error => {
+
+                console.error(
+                    "Error loading summary:",
+                    error
+                );
+
+            });
+
+
+        /* LOGOUT */
+
+        function logout() {
+
+            window.location.href = "login.html";
+
+        }
+        function loadShops() {
+            
+
+    const shopsSection =
+        document.getElementById("shopsSection");
+
+    const shopsList =
+        document.getElementById("shopsList");
+
+    shopsSection.style.display = "block";
+
+    shopsList.innerHTML = "Loading shops...";
+
+
+    fetch("http://127.0.0.1:5000/api/admin/shops")
+
+        .then(response => response.json())
+
+        .then(shops => {
+
+            let html = "";
+
+
+            if (shops.length === 0) {
+
+                html = "<p>No shops found.</p>";
+
+            }
+            else {
+
+                shops.forEach(function(shop) {
+
+                    html += `
+                        <div class="shop-card">
+
+                            <h3>${shop.name}</h3>
+
+                            <p>
+                                <strong>Shop ID:</strong>
+                                ${shop.id}
+                            </p>
+
+                            <p>
+                                <strong>Status:</strong>
+                                ${shop.status}
+                            </p>
+
+                            <p>
+                                <strong>Shop Owner:</strong>
+                                ${shop.owner || "Not assigned"}
+                            </p>
+
+                        </div>
+                    `;
+
+                });
+
+            }
+
+
+            shopsList.innerHTML = html;
+
+        })
+
+        .catch(error => {
+
+            console.error(
+                "Error loading shops:",
+                error
+            );
+
+            shopsList.innerHTML =
+                "<p>Unable to load shops.</p>";
+
+        });
+
+}
+/* LOAD SHOP COUNT */
+
+fetch("http://127.0.0.1:5000/api/admin/shops")
+
+    .then(response => response.json())
+
+    .then(shops => {
+
+        document.getElementById("shopCount").textContent =
+            shops.length;
+
+    })
+
+    .catch(error => {
+
+        console.error(
+            "Error loading shop count:",
+            error
+        );
+
+    });
+    function loadShopOwners() {
+
+    const ownersSection =
+        document.getElementById("ownersSection");
+
+    const ownersList =
+        document.getElementById("ownersList");
+
+    ownersSection.style.display = "block";
+
+    ownersList.innerHTML = "Loading shop owners...";
+
+
+    fetch("http://127.0.0.1:5000/api/admin/shop-owners")
+
+        .then(response => response.json())
+
+        .then(owners => {
+
+            let html = "";
+
+
+            if (owners.length === 0) {
+
+                html = "<p>No shop owners found.</p>";
+
+            }
+            else {
+
+                owners.forEach(function(owner) {
+
+                    html += `
+                        <div class="shop-card">
+
+                            <h3>👤 ${owner.username}</h3>
+
+                            <p>
+                                <strong>Owner ID:</strong>
+                                ${owner.id}
+                            </p>
+
+                            <p>
+                                <strong>Shop:</strong>
+                                ${owner.shop_name || "Not assigned"}
+                            </p>
+
+                            <p>
+                                <strong>Shop ID:</strong>
+                                ${owner.shop_id || "Not assigned"}
+                            </p>
+
+                            <p>
+                                <strong>Shop Status:</strong>
+                                ${owner.shop_status || "N/A"}
+                            </p>
+
+                        </div>
+                    `;
+
+                });
+
+            }
+
+
+            ownersList.innerHTML = html;
+
+        })
+
+        .catch(error => {
+
+            console.error(
+                "Error loading shop owners:",
+                error
+            );
+
+            ownersList.innerHTML =
+                "<p>Unable to load shop owners.</p>";
+
+        });
+
+}   
+function loadOrders() {
+
+    const ordersSection =
+        document.getElementById("ordersSection");
+
+    const ordersList =
+        document.getElementById("ordersList");
+
+    ordersSection.style.display = "block";
+
+    ordersList.innerHTML = "Loading orders...";
+
+
+    fetch("http://127.0.0.1:5000/api/admin/orders")
+
+        .then(response => response.json())
+
+        .then(orders => {
+
+            let html = "";
+
+
+            if (orders.length === 0) {
+
+                html = "<p>No orders found.</p>";
+
+            }
+            else {
+
+                orders.forEach(function(order) {
+
+                    let itemsHTML = "";
+
+                    order.items.forEach(function(item) {
+
+                        itemsHTML += `
+                            <p>
+                                ${item.name}
+                                × ${item.quantity}
+                                = ₹${item.price * item.quantity}
+                            </p>
+                        `;
+
+                    });
+
+
+                    html += `
+                        <div class="shop-card">
+
+                            <h3>🧾 Order #${order.id}</h3>
+
+                            <p>
+                                <strong>Date:</strong>
+                                ${order.date}
+                            </p>
+
+                            <p>
+                                <strong>Payment:</strong>
+                                ${order.payment}
+                            </p>
+
+                            <h4>Items</h4>
+
+                            ${itemsHTML}
+
+                            <h3>
+                                Total: ₹${order.total}
+                            </h3>
+
+                        </div>
+                    `;
+
+                });
+
+            }
+
+
+            ordersList.innerHTML = html;
+
+        })
+
+        .catch(error => {
+
+            console.error(
+                "Error loading orders:",
+                error
+            );
+
+            ordersList.innerHTML =
+                "<p>Unable to load orders.</p>";
+
+        });
+
+}
+
+
+    </script>
+
+
+</body>
+
+</html>
